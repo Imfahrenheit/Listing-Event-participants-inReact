@@ -1,0 +1,35 @@
+.Form{
+display:block ;
+width: 75%;
+
+margin:0 auto;
+
+
+text-align: center;
+padding-top: 10px;
+background: rgba(205, 212, 210, 0.696);
+
+
+}
+.Formi{
+
+width: 100%;
+
+height:80px;
+margin:2px auto;
+
+
+
+
+
+
+}
+.Formi input{
+
+    display:inline ;
+    outline: none;
+}
+.Formi button{
+width: 8%
+
+}

@@ -1,0 +1,52 @@
+.Participants{
+width: 75%;
+height:80px;
+color:rgb(31, 30, 30);
+box-sizing: border-box;
+margin:0 auto;
+
+position: relative;
+
+display:grid;
+grid-template-columns: 1fr 1fr 1fr 1fr;
+
+
+border: 1px solid rgb(194, 183, 183);
+
+}
+.Child{
+    
+display: flex;
+align-items: center;
+justify-content: center;
+
+
+
+background: rgba(218, 221, 221, 0.853);
+
+font-weight: normal;
+
+}
+.Del{
+width: 30%;
+background: rgba(216, 171, 149, 0.593);
+outline: none;
+height:25px; 
+
+
+}
+.Edit{
+width: 30%;
+background: rgba(191, 212, 179, 0.593);
+height:25px; 
+outline: none;
+
+}
+.Del:hover{
+    cursor: pointer;
+    background: rgba(219, 132, 88, 0.593);
+}
+.Edit:hover{
+    cursor: pointer;
+    background: rgba(162, 207, 138, 0.593);
+}
