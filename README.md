@@ -2,7 +2,7 @@
 
 ### the technologies used are following:
 - React
--Sweetalert library
+- Sweetalert library
 
 
 ### Instructions for installation:
@@ -13,4 +13,4 @@
 
 
 
-#### The static apps is deplyed on netlify 
+#### The static apps is deployed on surge 
