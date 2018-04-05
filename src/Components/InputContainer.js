@@ -34,28 +34,8 @@ class InputFields extends Component {
 
     }
 
-    // initialParticipants = () => {
-    //     let participants = participantsList
-    //     if (this.state.persons.length === 0) {
-
-    //         participants = participantsList
-    //     } else if (this.state.persons !== participants) {
-    //         participants = this.state.persons
-
-    //     }
-    //     else {
-    //         participants = participantsList
-    //     }
-
-    //     localStorage.setItem("participants", JSON.stringify(participants));
-    //     this.setState({ persons: participants })
-
-    // }
-
-
-    // componentDidMount() {
-    //     window.addEventListener('load', this.initialParticipants);
-    // }
+    
+    
 
 
     onChangeHandler = (e) => {
@@ -87,7 +67,7 @@ class InputFields extends Component {
         let regex = /^[0-9]+$/;
         let letter = /^\b(?!.*\.{2})[a-zA-Z.]+(?:\s[a-zA-Z.]+)\b$/
         let participants = [...this.state.persons];
-        // let persons = this.state.persons
+        
         const person = { ...this.state.person }
         if (person.name === ''
             || !person.name.match(letter)
@@ -110,25 +90,20 @@ class InputFields extends Component {
         }
         else {
 
-            // Get item from localStorage
+            
 
             // Add item to array
             participants.unshift(person);
-            // Re-set back to localStorage
-
+           
 
             this.setState(
                 {
                     persons: participants,
                     person: { name: '', email: '', phone: '' }
-                })
-
-
-        }
+                })}}
 
 
 
-    }
     deletHandler = (e) => {
 
 
