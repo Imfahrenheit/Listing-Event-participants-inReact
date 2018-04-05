@@ -15,7 +15,7 @@ class InputFields extends Component {
 
 
     state = {
-        persons:  JSON.parse(localStorage.getItem('participants')),
+        persons: participantsList,
         sortedPerson: false,
         person: {
             email: '',
@@ -34,28 +34,28 @@ class InputFields extends Component {
 
     }
 
-    initialParticipants = () => {
-        let participants = participantsList
-        if (this.state.persons.length === 0) {
+    // initialParticipants = () => {
+    //     let participants = participantsList
+    //     if (this.state.persons.length === 0) {
 
-            participants = participantsList
-        } else if (this.state.persons !== participants) {
-            participants = this.state.persons
+    //         participants = participantsList
+    //     } else if (this.state.persons !== participants) {
+    //         participants = this.state.persons
 
-        }
-        else {
-            participants = participantsList
-        }
+    //     }
+    //     else {
+    //         participants = participantsList
+    //     }
 
-        localStorage.setItem("participants", JSON.stringify(participants));
-        this.setState({ persons: JSON.parse(localStorage.getItem('participants')) })
+    //     localStorage.setItem("participants", JSON.stringify(participants));
+    //     this.setState({ persons: participants })
 
-    }
+    // }
 
 
-    componentDidMount() {
-        window.addEventListener('load', this.initialParticipants);
-    }
+    // componentDidMount() {
+    //     window.addEventListener('load', this.initialParticipants);
+    // }
 
 
     onChangeHandler = (e) => {
@@ -85,8 +85,8 @@ class InputFields extends Component {
     addParticipant = (e) => {
         e.preventDefault();
         let regex = /^[0-9]+$/;
-        let letter = /^[A-Za-z]+$/
-        let participants = JSON.parse(localStorage.getItem("participants"));
+        let letter = /^\b(?!.*\.{2})[a-zA-Z.]+(?:\s[a-zA-Z.]+)\b$/
+        let participants = [...this.state.persons];
         // let persons = this.state.persons
         const person = { ...this.state.person }
         if (person.name === ''
@@ -115,7 +115,7 @@ class InputFields extends Component {
             // Add item to array
             participants.unshift(person);
             // Re-set back to localStorage
-            localStorage.setItem("participants", JSON.stringify(participants));
+
 
             this.setState(
                 {
@@ -132,11 +132,11 @@ class InputFields extends Component {
     deletHandler = (e) => {
 
 
-        let participants = JSON.parse(localStorage.getItem('participants'));
+        let participants = [...this.state.persons];
         const userId = e.target.id
         participants.splice(userId, 1)
 
-        localStorage.setItem("participants", JSON.stringify(participants));
+
         this.setState({ persons: participants })
 
     }
@@ -155,12 +155,12 @@ class InputFields extends Component {
             personOnedit: personOnEdit,
             editable: !editable
         })
-        
+        console.log(this.state.personOnEdit)
     }
 
     updateHandler = (e) => {
         let regex = /^[0-9]+$/;
-        let letter = /^[A-Za-z]+$/
+        let letter = /^\b(?!.*\.{2})[a-zA-Z.]+(?:\s[a-zA-Z.]+)\b$/
         let personOnEdit = this.state.personOnEdit
         if (personOnEdit.name === '' ||
             !personOnEdit.name.match(letter) ||
@@ -174,26 +174,27 @@ class InputFields extends Component {
 
             })
             return false;
+        } else {
+            let editId = this.state.editId
+            let participants = this.state.persons;
+
+            participants[editId].name = personOnEdit.name
+            participants[editId].email = personOnEdit.email
+            participants[editId].phone = personOnEdit.phone;
+
+
+            this.setState(
+                {
+                    persons: participants,
+                    personOnEdit: {
+                        email: '',
+                        name: '',
+                        phone: ''
+                    },
+                    editable: false,
+                    editId: 200
+                })
         }
-        let editId = this.state.editId
-        let participants = this.state.persons;
-
-        participants[editId].name = personOnEdit.name
-        participants[editId].email = personOnEdit.email
-        participants[editId].phone = personOnEdit.phone;
-        localStorage.setItem("participants", JSON.stringify(participants));
-
-        this.setState(
-            {
-                persons: participants,
-                personOnEdit: {
-                    email: '',
-                    name: '',
-                    phone: ''
-                },
-                editable: false,
-                editId: 200
-            })
     }
 
     hideModal = () => {
@@ -228,7 +229,7 @@ class InputFields extends Component {
                 return ((p < q) ? -1 : ((p > q) ? 1 : 0))
             })
         }
-        localStorage.setItem("participants", JSON.stringify(participants));
+
 
         this.setState({
             users: participants,
@@ -240,7 +241,7 @@ class InputFields extends Component {
 
     render() {
 
-        let persons = this.state.persons
+        let persons = [...this.state.persons]
         let form = (
             <div >
 
