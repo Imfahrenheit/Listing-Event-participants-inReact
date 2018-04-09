@@ -246,7 +246,7 @@ class InputFields extends Component {
                         (el, i) => {
 
                             return (
-                                <React.Fragment key={i} >
+                                
 
                                     <Participants
                                         key={i}
@@ -262,7 +262,7 @@ class InputFields extends Component {
                                     </Participants>
 
 
-                                </React.Fragment>
+                               
 
 
 
