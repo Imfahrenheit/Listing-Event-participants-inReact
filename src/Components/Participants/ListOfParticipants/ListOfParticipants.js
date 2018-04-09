@@ -5,72 +5,72 @@ export const participantsList = [
         phone: "0883424234"
     },
     {
-        name: "Mahmudullah",
+        name: "Mahmudullah Riad",
         email: "maxpassion@gmail.com",
         phone: "07834342653"
     },
     {
-        name: "beckham",
+        name: "beckham lin",
         email: "buckyrules@gmail.com",
         phone: "08348768933"
     },
     {
-        name: "Martin",
+        name: "Martin garix",
         email: "martinrocks@yahoo.com",
         phone: "03489754983"
     },
     {
-        name: "husslewoolf",
+        name: " David husslewoolf ",
         email: "hussey5454@gmail.com",
         phone: "0833824234"
     },
     {
-        name: "gazi",
+        name: "Anwar gazi",
         email: "gazil@gmail.com",
         phone: "0883434634"
     },
     {
-        name: "ryan",
+        name: "Ryan gosling",
         email: "john@gmail.com",
         phone: "0883322234"
     },
     {
-        name: "Sakib",
+        name: "Sakib hasan",
         email: "amir@gmail.com",
         phone: "0882425734"
     },
     {
-        name: "salman",
+        name: "Salman butt",
         email: "salman@gmail.com",
         phone: "0843424534"
     },
     {
-        name: "fahrenheit",
+        name: "Fahrenheit unlimited",
         email: "david@gmail.com",
         phone: "0383224234"
     },
     {
-        name: "Tom",
+        name: "Tom moody",
         email: "rohit@gmail.com",
         phone: "0843224234"
     },
     {
-        name: "shen warn",
+        name: "Shen warn",
         email: "sharma@gmail.com",
         phone: "0483424234"
     },
     {
-        name: "daniel",
+        name: "Daniel craig",
         email: "dhawan@gmail.com",
         phone: "0833424234"
     },
     {
-        name: "mustafizz",
+        name: "Mustafizz rehman",
         email: "virat@gmail.com",
         phone: "0863427234"
     },
     {
-        name: "Folkner",
+        name: "Paul Folkner ",
         email: "folkner@gmail.com",
         phone: "0383424534"
     },
@@ -80,12 +80,12 @@ export const participantsList = [
         phone: "0884524234"
     },
     {
-        name: "richard",
+        name: "Richard Marks",
         email: "jaddu@gmail.com",
         phone: "0882624234"
     },
     {
-        name: "Zeenath",
+        name: "Zeenath kimbarly",
         email: "suresh@gmail.com",
         phone: "0883234234"
     }

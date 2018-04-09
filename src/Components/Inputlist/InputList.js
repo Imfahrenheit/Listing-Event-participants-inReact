@@ -19,7 +19,7 @@ import styles from './Inputlist.css';
         <input value={props.values['name']} 
       type={'text'} className={styles.Inputelement} 
       onChange={props.change} name={'name'} 
-      placeholder={'Name'}
+      placeholder={'Full Name'}
      
       />
       
